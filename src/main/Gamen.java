@@ -7,6 +7,7 @@ package main;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -178,31 +179,38 @@ public class Gamen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int bonus_attack = Integer.parseInt(jTextField7.getText());
-        int game_clears = Integer.parseInt(jTextField8.getText());
+        if (jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty() || jTextField5.getText().isEmpty() || jTextField6.getText().isEmpty() || jTextField7.getText().isEmpty() || jTextField8.getText().isEmpty()) {
+            
+            JOptionPane.showMessageDialog(null, "Please fill all the camps necessary");
 
-        int bonus_calculus = ((bonus_attack - game_clears * 5 - 15));
-        if (bonus_calculus < 0) {
-            bonus_calculus = 0;
+        } else {
+            int bonus_attack = Integer.parseInt(jTextField7.getText());
+            int game_clears = Integer.parseInt(jTextField8.getText());
+
+            int bonus_calculus = ((bonus_attack - game_clears * 5 - 15));
+            if (bonus_calculus < 0) {
+                bonus_calculus = 0;
+            }
+
+            int by_fighting = Integer.parseInt(jTextField1.getText());
+            int by_shooting = Integer.parseInt(jTextField6.getText());
+
+            String defeated_enemies = Integer.toString((by_fighting + by_shooting / 2) / (5 + bonus_calculus));
+
+            double short_range_shots = Double.parseDouble(jTextField2.getText());
+            double middle_range_shots = Double.parseDouble(jTextField3.getText());
+            double long_range_shots = Double.parseDouble(jTextField4.getText());
+            double no_aiming_shots = Double.parseDouble(jTextField5.getText());
+
+            String shooting_calculus = String.format("%.2f", (short_range_shots + middle_range_shots * 2 + long_range_shots * 3 - no_aiming_shots * 4));
+
+            jLabel10.setVisible(true);
+            jLabel12.setVisible(true);
+
+            jLabel11.setText(defeated_enemies);
+            jLabel13.setText(shooting_calculus);
         }
 
-        int by_fighting = Integer.parseInt(jTextField1.getText());
-        int by_shooting = Integer.parseInt(jTextField6.getText());
-
-        String defeated_enemies = Integer.toString((by_fighting + by_shooting / 2) / (5 + bonus_calculus));
-
-        double short_range_shots = Double.parseDouble(jTextField2.getText());
-        double middle_range_shots = Double.parseDouble(jTextField3.getText());
-        double long_range_shots = Double.parseDouble(jTextField4.getText());
-        double no_aiming_shots = Double.parseDouble(jTextField5.getText());
-
-        String shooting_calculus = String.format("%.2f", (short_range_shots + middle_range_shots * 2 + long_range_shots * 3 - no_aiming_shots * 4));
-
-        jLabel10.setVisible(true);
-        jLabel12.setVisible(true);
-
-        jLabel11.setText(defeated_enemies);
-        jLabel13.setText(shooting_calculus);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void centreWindow(Window frame) {
