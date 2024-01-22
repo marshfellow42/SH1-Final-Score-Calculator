@@ -181,7 +181,7 @@ public class Gamen extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty() || jTextField5.getText().isEmpty() || jTextField6.getText().isEmpty() || jTextField7.getText().isEmpty() || jTextField8.getText().isEmpty()) {
             
-            JOptionPane.showMessageDialog(null, "Please fill all the camps necessary");
+            JOptionPane.showMessageDialog(null, "Please fill all the necessary camps");
 
         } else {
             int bonus_attack = Integer.parseInt(jTextField7.getText());
