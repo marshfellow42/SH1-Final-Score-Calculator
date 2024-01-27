@@ -223,6 +223,8 @@ public class Gamen extends javax.swing.JFrame {
             
             if (defeated_enemies >= 30) {
                 jLabel11.setForeground(required_points);
+            } else {
+                jLabel11.setForeground(Color.white);
             }
 
             double short_range_shots = Double.parseDouble(jTextField2.getText());
@@ -235,6 +237,8 @@ public class Gamen extends javax.swing.JFrame {
             
             if (shooting_calculus >= 1) {
                 jLabel13.setForeground(required_points);
+            } else {
+                jLabel13.setForeground(Color.white);
             }
 
             jLabel10.setVisible(true);
