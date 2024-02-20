@@ -12,6 +12,14 @@ public class Gamen extends javax.swing.JFrame {
         initComponents();
         jLabel10.setVisible(false);
         jLabel12.setVisible(false);
+        jTextField1.requestFocus();
+        jTextField1.setNextFocusableComponent(jTextField6);
+        jTextField6.setNextFocusableComponent(jTextField2);
+        jTextField2.setNextFocusableComponent(jTextField3);
+        jTextField3.setNextFocusableComponent(jTextField4);
+        jTextField4.setNextFocusableComponent(jTextField5);
+        jTextField5.setNextFocusableComponent(jTextField8);
+        jTextField8.setNextFocusableComponent(jTextField7);
         centreWindow(this);
     }
 
