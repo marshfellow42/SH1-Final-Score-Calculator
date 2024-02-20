@@ -10,9 +10,9 @@ public class Gamen extends javax.swing.JFrame {
 
     public Gamen() {
         initComponents();
-        centreWindow(this);
         jLabel10.setVisible(false);
         jLabel12.setVisible(false);
+        centreWindow(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -195,6 +195,7 @@ public class Gamen extends javax.swing.JFrame {
             int game_clears = Integer.parseInt(jTextField8.getText());
 
             int bonus_calculus = ((bonus_attack - game_clears * 5 - 15));
+            
             if (bonus_calculus < 0) {
                 bonus_calculus = 0;
             }
@@ -203,13 +204,14 @@ public class Gamen extends javax.swing.JFrame {
             int by_shooting = Integer.parseInt(jTextField6.getText());
             
             int defeated_enemies = (by_fighting + by_shooting / 2) / (5 + bonus_calculus);
-            String show_defeated_enemies = Integer.toString(defeated_enemies);
             
             if (defeated_enemies >= 30) {
                 jLabel11.setForeground(required_points);
             } else {
                 jLabel11.setForeground(Color.white);
             }
+            
+            String show_defeated_enemies = Integer.toString(defeated_enemies);
 
             double short_range_shots = Double.parseDouble(jTextField2.getText());
             double middle_range_shots = Double.parseDouble(jTextField3.getText());
@@ -217,13 +219,14 @@ public class Gamen extends javax.swing.JFrame {
             double no_aiming_shots = Double.parseDouble(jTextField5.getText());
             
             double shooting_calculus = (short_range_shots + middle_range_shots * 2 + long_range_shots * 3 - no_aiming_shots * 4);
-            String show_shooting_calculus = String.format("%.2f", shooting_calculus);
             
             if (shooting_calculus >= 1) {
                 jLabel13.setForeground(required_points);
             } else {
                 jLabel13.setForeground(Color.white);
             }
+            
+            String show_shooting_calculus = String.format("%.2f", shooting_calculus);
 
             jLabel10.setVisible(true);
             jLabel12.setVisible(true);
@@ -242,11 +245,7 @@ public class Gamen extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
